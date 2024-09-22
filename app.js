@@ -19,15 +19,15 @@ const draw=()=>{
     msg.style.backgroundColor="aquamarine"
 }
 
-const showWinner=(userwin)=>{
+const showWinner=(userwin,userchoice,compChoice)=>{
     if(userwin===true){
-        msg.innerText="you win :)"
+        msg.innerText=`you win :) ${userchoice} beats ${compChoice}`
         msg.style.backgroundColor="green"
         userScore++
         userSc.innerText=userScore
     }
     else{
-        msg.innerText="you lose :("
+        msg.innerText=`you lose :( ${compChoice} beats ${userchoice}`
         msg.style.backgroundColor="red"
         compScore++
         compSc.innerText=compScore
@@ -54,7 +54,7 @@ const playGame=(userchoice)=>{
         else{
             userwin= compChoice==="rock"?false:true
         }
-        showWinner(userwin);
+        showWinner(userwin,userchoice,compChoice);
     }
 }
 
